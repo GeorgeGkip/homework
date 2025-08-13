@@ -1,0 +1,32 @@
+{% extends 'base/home.html' %}
+
+
+{% load static %}  
+
+{% block content %}
+<div class="container mt-5">
+  <div class="your-centered-content">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+
+        <center><h1>Here you can find all the subjects of Homework!</h1></center>
+        <br><br>
+
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+            
+              {% for subject in sub_list %}
+                <div class="col" >
+                  <div class="card" style="width: 18rem;">
+                    <img src="{% static 'subject_images/'|add:subject.name|add:'.jpg' %}" class="card-img-top" alt="{{ subject.name }}">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ subject.name }}</h5>
+                    <p class="card-text">{{ subject.description }}</p>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+              
+            </div> 
+    </div>
+  </div>
+</div>
+{% endblock %}

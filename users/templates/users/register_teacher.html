@@ -1,0 +1,19 @@
+{% extends 'base/home.html' %}
+
+{% block content %}
+    <div class="d-flex justify-content-center mt-5 vh-100">
+      <div class="your-centered-content">
+        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+    
+          <h1>Teacher Registration</h1>
+          
+          <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit">Register</button>
+          </form>
+    
+        </div>
+      </div>
+    </div>
+{% endblock %}

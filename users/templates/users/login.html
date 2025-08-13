@@ -1,0 +1,32 @@
+{% extends 'base/home.html' %}
+
+{% block content %}
+    <div class="d-flex justify-content-center mt-5 vh-100">
+    <div class="your-centered-content">
+        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+            
+            {% csrf_token %}
+
+            <center>
+                <h2>Log In</h2>
+                <br><br>
+                <form method="POST">
+                    {% csrf_token %} 
+                    {{ form.as_p }} 
+                    <button type="submit" class="bg-success">Log In</button>
+                </form>
+                {% if form.errors %}
+                    <p style="color: red;">Your username and password didn't match. Please try again.</p>
+                {% endif %}
+            </center>
+            
+            <br><br>
+            
+            <center><a href="{% url 'register_user_type' %}"><button type="submit" class="bg-success">Create Account</button></a>
+            
+            </center>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

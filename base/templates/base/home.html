@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homework!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  
+  <nav class="navbar navbar-expand-lg bg-success">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">Homework!</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          
+          <!-- Left-aligned items -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'subjects' %}">Subjects</a>
+            </li>
+          </ul>
+
+          <!-- Right-aligned items -->
+           {% if user.is_authenticated %}
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+            </li>
+            {% else %}
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Log In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register_user_type' %}">Register</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+  </head>
+  <body>
+    {% block content %}
+    <div class="container mt-5">
+      <div class="your-centered-content">
+        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+
+
+      <center>
+        
+        <hr class="text-success  border-3 opacity-100">
+        <h1>Welcome to Homework!</h1> 
+        <hr class="text-success  border-3 opacity-100">
+        <br><br>
+      <div style="width: 1000px;">
+      
+        <h3>
+        Homework is a dynamic hub connecting students with the perfect teachers 
+        for private lessons.
+        <br> <br> 
+        Whether you're seeking to master a new subject, ace an exam, or simply 
+        explore a new passion, our community offers a diverse array of expert educators. 
+        <br><br> 
+        Teachers can create profiles, showcase their skills, and connect with motivated students, 
+        while learners can easily find and book personalized instruction. 
+        <br><br> 
+        Start your learning journey 
+        today and unlock your full potential!
+        </h3>
+      
+      </div>
+
+      </center>
+
+        </div>
+      </div>
+    </div>
+          {% endblock %}
+
+    <center>
+    <footer class="fixed-bottom">
+      <p>&copy; 2025 This is an on going project of George Gkipatoudis</p>
+    </footer>
+    </center>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    
+    
+  </body>
+</html>

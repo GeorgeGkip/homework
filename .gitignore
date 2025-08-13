@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.swp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Distribution / packaging
+.Python
+env/
+venv/
+lib/
+include/
+bin/
+pip-log.txt
+pip-delete-this-directory.txt
+.idea/
+.vscode/
+
+# Django stuff:
+*.log
+*.pot
+*.mo
+*.coverage
+.coverage
+/htmlcov/
+.nox/
+.pytest_cache/
+.tox/
+
+# Production specific
+/media/
+/static_collected/
+local_settings.py
+db.sqlite3
