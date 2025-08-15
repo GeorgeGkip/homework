@@ -26,8 +26,6 @@ SECRET_KEY = 'django-insecure-2j6$=6_%vsf+=r@u$#n=nb$mk6v0yo=5_jb5y55c*4^_bqlq*4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -143,4 +141,10 @@ if not DEBUG:
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
+]
+
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    ".onrender.com",  # allow any Render subdomain
 ]
