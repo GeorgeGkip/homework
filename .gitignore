@@ -21,6 +21,9 @@ pip-delete-this-directory.txt
 .idea/
 .vscode/
 
+#Environment variables
+.env
+
 # Django stuff:
 *.log
 *.pot
