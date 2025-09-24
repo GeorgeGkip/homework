@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import TeacherRegisterForm, StudentRegisterForm, UserTypeForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
-
+from . import reg_email
 
 def register_user_type(request):
     if request.method == 'POST':
@@ -24,10 +24,12 @@ def register_teacher(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('profile')
+            reg_email.registration_email(user)
+            return redirect('registration_success')
     else:
         form = TeacherRegisterForm()
     return render(request, 'users/register_teacher.html', {'form': form})
+
 
 def register_student(request):
     if request.method == 'POST':
@@ -35,11 +37,15 @@ def register_student(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('profile')
+            reg_email.registration_email(user)
+            return redirect('registration_success')
     else:
         form = StudentRegisterForm()
     return render(request, 'users/register_student.html', {'form': form})
 
+
+def registration_success(request):
+    return render(request, 'users/registration_success.html')
 
 
 def login_view(request):

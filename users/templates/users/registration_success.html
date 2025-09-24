@@ -1,0 +1,18 @@
+{% extends 'base/home.html' %}
+
+{% block content %}
+<div>
+  <center>
+    <br><br>
+    <h3>Congratulations!!!
+    <br><br>
+    You successfully registered to Homework! Whether you're a tutor or student, now it's time for some serious teaching or learning!
+    <br>
+    Now you can go to your <a href="{% url 'profile' %}">profile</a>, or see what <a href="{% url 'subjects' %}">subjects</a> are available for teaching! 
+    <br>
+    <br>
+    Note: If you are a tutor and you can't  find a subject you want to teach, contact us via email at conntact.homeworkapp@gmail.com!
+    </h3>
+  </center>
+</div>
+{% endblock %}
