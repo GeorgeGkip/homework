@@ -2,11 +2,11 @@ import smtplib
 from email.message import EmailMessage
 from string import Template
 from pathlib import Path
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 
 
-load_dotenv()
+# load_dotenv()
 
 def registration_email(user):
     
